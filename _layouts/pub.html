@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+
+  <meta name="citation_title" content="{{page.title}}">
+  <meta name="citation_pdf_url" content="http://solab.org/projects/{{page.slug}}.pdf">
+  {% if page.doi %}
+    <meta name="citation_doi" content="{{page.doi}}">
+  {% endif %}
+  {% if page.venue %}
+    {% assign venue_type = site.data.venues[page.venue].bibtex.venue %}
+    {% if venue_type == 'journal' %}
+      <meta name="citation_journal_title" content="{{site.data.venues[page.venue].full | default:page.venue}}">
+    {% elsif venue_type == 'institute' %}
+      <meta name="citation_technical_report_institution" content="{{site.data.venues[page.venue].full | default:page.venue}}">
+    {% else %}
+      <meta name="citation_inbook_title" content="{{site.data.venues[page.venue].full | default:page.venue}}">
+    {% endif %}
+  {% endif %}
+
+  {% for author in page.authors %}
+    {% assign person = site.data.people[author.key] %}
+    {% capture affiliation %}
+      {% if person %}
+        {{author.affiliation | default: person.affiliation}}
+      {% else %}
+        {{author.affiliation}}
+      {% endif %}
+    {% endcapture %}
+    <meta name="citation_author" content="{{author.first_name}} {{author.last_name}}">
+    <meta name="citation_author_institution" content="{{affiliation | strip}}">
+  {% endfor %}
+
+</head>
+<body>
+  {% include header.html %}
+
+  <h1>
+    {{ page.title}}
+  </h1>
+
+  <div>
+    {% for author in page.authors %}
+      {% assign person = site.data.people[author.key] %}
+      {% assign person_url = author.url | default:person.url %}
+      <p class="pure-u-1-2 pure-u-md-1-4">
+        {% if person_url %}<a href="{{person_url}}">{% endif %}
+        {% if person %}<img src="/imgs/people/{{author.key}}.jpg" alt="Headshot of {{ person.first_name }} {{ person.last_name }}" />{% endif %}
+        <span class="name">{{ person.first_name }} {{ person.last_name }} {% if author.equal %}*{% endif %}</span>
+        <span class="affiliation">
+          {% if person %}
+            {{author.affiliation | default: person.affiliation }}
+          {% else %}
+            {{author.affiliation}}
+          {% endif %}
+        </span>
+        {% if person_url %}</a>{% endif %}
+      </p>
+    {% endfor %}
+  </div>
+  <div class="flex flex-col items-center p-7 rounded-2xl">  
+    {{content}}
+  </div>
+</body>
+</html>
