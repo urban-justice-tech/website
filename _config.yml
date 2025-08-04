@@ -30,12 +30,9 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 collections:
-  projects:
+  works:
     output: true
-    permalink: /projects/:slug/index.html
-  pubs:
-    output: true
-    permalink: /pubs/:slug/index.html
+    permalink: /works/:slug/index.html
 
 # Build settings
 plugins:

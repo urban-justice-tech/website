@@ -1,6 +1,85 @@
 wyso:
+  type: current
+  name: Wonyoung So
   first_name: Wonyoung
   last_name: So
   url: https://wonyoung.so
-  position: Director
-  affiliation: University of Michigan
+  title: Assistant Professor
+  affiliation: Taubman College, University of Michigan
+  photo: wyso.jpg
+  description: |
+    <a href="https://wonyoung.so">Wonyoung So</a> is an Assistant Professor of Urban Technology at Taubman College of Architecture & Urban Planning, University of Michigan – Ann Arbor.
+    
+    He works at the intersection of urban planning, critical data studies, and data visualization to study how access to resources and opportunities over space and place is mediated by data and technology, with a particular focus on housing. He combines data-driven methods and data visualization practices to empirically bolster and rhetorically frame narratives for translating scholarly research into public impact. He centers issues of justice and equity to promote the democratic participation of marginalized residents—particularly those marginalized by class, race, gender, and disability, among other durable categories of inequality—who are disproportionately excluded from accessing resources and opportunities, especially when such access is governed by algorithms and AI.
+
+ericliu:
+  type: collaborator
+  first_name: Eric
+  last_name: Liu
+  affiliation: MIT
+
+dignazio:
+  type: collaborator
+  first_name: Catherine
+  last_name: D'Ignazio
+  affiliation: MIT
+
+peko:
+  type: collaborator
+  first_name: Peko
+  last_name: Hosoi
+  affiliation: MIT
+
+erinmel: 
+  type: collaborator
+  first_name: Erin
+  last_name: McElory
+  affiliation: University of Washington
+
+agade:
+  type: collaborator
+  first_name: Anisha
+  last_name: Gade
+  affiliation: MIT
+
+fhangen:
+  type: collaborator
+  first_name: Forrest
+  last_name: Hangen
+  affiliation: Northeastern University
+
+yshin:
+  type: collaborator
+  first_name: Youjin
+  last_name: Shin
+  affiliation: Washington Post
+
+eunseonpark:
+  type: collaborator
+  first_name: Eunseon
+  last_name: Park
+  affiliation: Listen to the City
+
+akoh:
+  type: collaborator
+  first_name: Achim
+  last_name: Koh
+  affiliation: CUNY
+
+plohia:
+  type: collaborator
+  first_name: Pranay
+  last_name: Lohia
+  affiliation: Microsoft
+
+rpimplikar:
+  type: collaborator
+  first_name: Rakesh
+  last_name: Pimplikar
+  affiliation: IBM Research AI
+
+fduarte:
+  type: collaborator
+  first_name: Fabio
+  last_name: Duarte
+  affiliation: MIT

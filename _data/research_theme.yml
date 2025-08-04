@@ -1,0 +1,13 @@
+exposing:
+  title: Exposing Inequality in Urban Technology
+  description: We investigate urban technologies' process of collecting data and
+    training algorithms that render historical harms invisible during the
+    measurement, training, and deployment processes.
+reparative-tech:
+  title: Reparative Technology
+  description: We develop actionable and reparative algorithms that have direct
+    implications for racial justice in housing policy.
+community-vis:
+  title: Community-centered Data Visualization
+  description: We develop data visualization tools that are designed to be used by
+    communities to understand and address their own data.
