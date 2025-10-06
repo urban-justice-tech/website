@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: 18
       - name: Install Node dependencies
-        run: npm install
+        run: npm ci
       - name: Setup Ruby
         # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
         uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
@@ -54,6 +54,14 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: PostCSS (process generated CSS)
+        # If Jekyll compiled SCSS into _site/assets/css/main.css, process it with postcss-cli
+        run: |
+          if [ -f _site/assets/css/main.css ]; then
+            npx postcss _site/assets/css/main.css -o _site/assets/css/main.css
+          else
+            echo "_site/assets/css/main.css not found; skipping PostCSS step"
+          fi
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
