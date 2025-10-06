@@ -4,7 +4,7 @@
       <div class="lg:col-span-6 flex items-center justify-between">
   <a href="{{ '/' | relative_url }}">
           <h1 class="text-[#193349] text-xl md:text-2xl font-bold">
-            <img src="{{ '/assets/imgs/logo.svg' | relative_url }}" alt="Lab for Urban Justice and Technology" class="h-10 w-auto">
+            <img src="{{ '/assets/imgs/logo.svg' | relative_url }}" alt="Lab for Urban Justice and Technology" class="h-10 w-auto" onerror="(function(img){ if(img.dataset.fallbackTried) return; img.dataset.fallbackTried=true; img.src='/assets/imgs/logo.svg'; })(this)">
           </h1>
         </a>
         <button id="menu-toggle" class="lg:hidden ml-4 p-2 rounded" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
