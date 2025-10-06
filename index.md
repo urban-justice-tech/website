@@ -4,51 +4,63 @@ home: true
 title: Lab for Urban Justice and Technology
 ---
 
-  <div class="relative w-full overflow-hidden">
-    <!-- header -->
-     <header class="relative z-10 text-[#193349] py-6">
-       <div class="max-w-7xl mx-auto px-5">
-         <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
-           <div class="lg:col-span-6">
-             <a href="/">
-               <h1 class="text-[#193349] text-xl md:text-2xl font-bold">
-                 <img src="/assets/imgs/logo.svg" alt="Lab for Urban Justice and Technology">
-               </h1>
-             </a>
-           </div>
-           <ul class="lg:col-span-6 flex flex-col lg:flex-row lg:justify-end space-y-2 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0">
-             <li>
-               <a href="/#about" class="text-[#193349] hover:text-gray-500">About</a>
-             </li>
-             <li>
-               <a href="/#our-work" class="text-[#193349] hover:text-gray-500">Our Work</a>
-             </li>
-             <li>
-               <a href="/#team" class="text-[#193349] hover:text-gray-500">Team</a>
-             </li>
-           </ul>
-         </div>
-       </div>
-     </header>
+  
+
+  <div id="hero-wrap" class="relative w-full">
 
     <!-- Video Background -->
-    <!-- <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+     <video id="hero-video" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
       <source src="/assets/imgs/hero.mp4" type="video/mp4">
-    </video> -->
+    </video>
+     
+     <!-- Header over video -->
+     <header id="site-header" class="sticky top-0 left-0 w-full z-20 bg-transparent text-[#193349] py-6">
+       <div id="site-header-inner" class="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 mx-auto max-w-[92rem] 2xl:max-w-[110rem] 3xl:max-w-[128rem] 4xl:max-w-[144rem]">   
+
+        <div id="site-header-inner-fixed" class="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 mx-auto max-w-[92rem] 2xl:max-w-[110rem] 3xl:max-w-[128rem] 4xl:max-w-[144rem]">   
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 pb-3 md:pb-0 lg:pb-0">
+              <div class="lg:col-span-6 flex items-center justify-between">
+                <a href="/">
+                  <h1 class="text-[#193349] text-xl md:text-2xl font-bold">
+                    <img src="/assets/imgs/logo.svg" alt="Lab for Urban Justice and Technology">
+                  </h1>
+                </a>
+                <button id="menu-toggle" class="lg:hidden ml-4 p-2 rounded" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#193349]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+              <ul id="primary-nav" class="lg:col-span-6 hidden lg:flex flex-col lg:flex-row lg:justify-end space-y-1 lg:space-y-0 lg:space-x-8 lg:mt-0">
+                <li>
+                  <a href="/#our-work" class="text-[#193349] hover:text-gray-500">Our Work</a>
+                </li>
+                <li>
+                  <a href="/#our-approach" class="text-[#193349] hover:text-gray-500">Our Approach</a>
+                </li>
+                <li>
+                  <a href="/#team" class="text-[#193349] hover:text-gray-500">Team</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+     </header>
     
     <!-- Hero Section -->
-    <div id="hero" class="relative z-10 max-w-7xl mx-auto px-5 py-12 md:py-16">
+     <div id="hero" class="relative z-10 w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 mx-auto max-w-[92rem] 2xl:max-w-[110rem] 3xl:max-w-[128rem] 4xl:max-w-[144rem] py-5 md:py-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
         <div class="lg:col-span-6">
           <p class="text-[#193349] text-3xl font-semibold leading-tight">
-            <span class="text-[#6a5aed]">The Lab for Urban Justice and Technology</span> studies urban technologies, collect data, build tools and data visualization to expose the inequities behind urban technologies and contribute to repairing the relationships.
+            <span class="text-[#6a5aed]">The Lab for Urban Justice and Technology</span> studies urban technologies, collects data, and builds tools and visualizations to expose the inequities behind urban technologies and contribute to repairng the relationships by acknowledging and addressing past harms.
           </p>
         </div>
       </div>
     </div>
 
     <!-- Research Theme Section -->
-    <section class="relative z-10 max-w-7xl mx-auto px-5 py-6 md:py-8">
+     <section class="relative z-10 w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 mx-auto max-w-[92rem] 2xl:max-w-[110rem] 3xl:max-w-[128rem] 4xl:max-w-[144rem] py-6 md:py-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-4">
         <div class="lg:col-span-12">
           <h1 class="text-[#6e59f6] text-lg font-bold uppercase tracking-wide">RESEARCH THEME</h1>
@@ -69,15 +81,21 @@ title: Lab for Urban Justice and Technology
   </div>
 
   <!-- Our Work Section -->
-  <section id="our-work" class="max-w-7xl mx-auto px-5 py-6 md:py-8">
+  <section id="our-work" class="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 mx-auto max-w-[92rem] 2xl:max-w-[110rem] 3xl:max-w-[128rem] 4xl:max-w-[144rem] py-6 md:py-8">
     <!-- Title and Filter Row -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-4">
       <!-- OUR WORK Title (3 columns) -->
       <div class="lg:col-span-3">
         <h1 class="text-[#6e59f6] text-lg font-bold uppercase tracking-wide  mb-3">OUR WORK</h1>
-
-
-          <input type="text" id="search-input" placeholder="Search..." class="w-full bg-transparent border-b border-[#AAA] text-[#193349] placeholder-gray-500 focus:outline-none focus:border-[#6e59f6] pb-1 pt-1" />
+      
+      
+          <div class="relative">
+            <svg class="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 text-[#6e59f6]" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <input type="text" id="search-input" placeholder="Search..." class="w-full bg-transparent border-b border-[#AAA] text-[#193349] placeholder-gray-500 focus:outline-none focus:border-[#6e59f6] pb-1 pt-1 pl-6" />
+          </div>
           
       </div>
       
@@ -87,7 +105,14 @@ title: Lab for Urban Justice and Technology
         <div>
           {% for theme_hash in site.data.research_theme %}
             {% assign theme = theme_hash[1] %}
-            <button class="research-theme-btn inline-block px-2 py-1 rounded-lg border border-[#193349] bg-[#193349] text-white text-xs font-medium hover:border-[#BBBBBB] hover:bg-white hover:text-black transition-colors mr-2 mb-1" data-theme="{{ theme_hash[0] }}">{{ theme.title }}</button>
+            {% assign theme_key = theme_hash[0] %}
+            {% assign theme_count = 0 %}
+            {% for work in site.works %}
+              {% if work.research_themes and work.research_themes contains theme_key %}
+                {% assign theme_count = theme_count | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            <button class="research-theme-btn inline-block px-2 py-1 rounded-lg border border-[#BBBBBB] bg-[#fafcf3] text-[#193349] text-xs font-medium mr-2 mb-1" data-theme="{{ theme_key }}"><span class="theme-title">{{ theme.title }}</span><span class="ml-1 text-[10px] opacity-70">({{ theme_count }})</span></button>
           {% endfor %}
         </div>
       </div>
@@ -99,7 +124,13 @@ title: Lab for Urban Justice and Technology
           {% for tag_group in site.data.tags %}
             {% for tag in tag_group %}
               {% if tag != "# contribution type" and tag != "# methods" and tag != "# domain" %}
-                <button class="tag-btn inline-block px-2 py-1 rounded-lg border border-[#193349] bg-[#193349] text-white text-xs font-medium hover:border-[#AAAAAA] hover:bg-white hover:text-black transition-colors mr-2 mb-1" data-tag="{{ tag }}">{{ tag }}</button>
+                {% assign tag_count = 0 %}
+                {% for work in site.works %}
+                  {% if work.tags and work.tags contains tag %}
+                    {% assign tag_count = tag_count | plus: 1 %}
+                  {% endif %}
+                {% endfor %}
+                <button class="tag-btn inline-block px-2 py-1 rounded-lg border border-[#BBBBBB] bg-[#fafcf3] text-[#193349] text-xs font-medium mr-2 mb-1" data-tag="{{ tag }}">{{ tag }}<span class="ml-1 text-[10px] opacity-70">({{ tag_count }})</span></button>
               {% endif %}
             {% endfor %}
           {% endfor %}
@@ -112,10 +143,12 @@ title: Lab for Urban Justice and Technology
       {% assign sorted_works = site.works | sort: "year" | reverse %}
       {% for work in sorted_works %}
         {% assign url = work.external_url | default: work.url | relative_url | replace: 'index.html', '' %}
-        <div class="sm:col-span-1 lg:col-span-3 mb-6 lg:mb-0">
+        <div class="sm:col-span-1 lg:col-span-3 mb-6 lg:mb-0 work">
           {% if work.images and work.images.size > 0 %}
             <div class="mb-4">
-              <img src="/imgs/works/{{ work.slug }}/{{ work.images.first }}" alt="{{ work.title }}" class="w-full object-cover rounded">
+              <a href="{{ url }}" class="block">
+                <img src="/imgs/works/{{ work.slug }}/{{ work.images.first }}" alt="{{ work.title }}" class="w-full object-cover rounded">
+              </a>
             </div>
           {% endif %}
           
@@ -125,7 +158,7 @@ title: Lab for Urban Justice and Technology
               {% for theme_key in work.research_themes %}
                 {% assign theme = site.data.research_theme[theme_key] %}
                 {% if theme %}
-                  <span class="research-theme-btn inline-block px-2 py-1 rounded-lg border border-[#193349] bg-[#193349] text-white text-xs font-medium hover:border-[#BBBBBB] hover:bg-white hover:text-black transition-colors mr-2 mb-1">{{ theme.title }}</span>
+                  <span class="research-theme-btn inline-block px-2 py-1 rounded-lg border border-[#BBBBBB] bg-[#fafcf3] text-[#193349] text-xs font-medium mr-2 mb-1">{{ theme.title }}</span>
                 {% endif %}
               {% endfor %}
             </div>
@@ -178,8 +211,19 @@ title: Lab for Urban Justice and Technology
     </div>
   </section>
 
+  <section id="our-approach" class="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 mx-auto max-w-[92rem] 2xl:max-w-[110rem] 3xl:max-w-[128rem] 4xl:max-w-[144rem] py-8 md:py-16">
+    <h1 class="text-[#6e59f6] text-lg font-bold uppercase tracking-wide">OUR APPROACH</h1>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-4">
+      <div class="lg:col-span-8">
+        <p class="text-[#193349] text-3xl font-semibold leading-tight">
+          Our approach is uncover how these systems formalize present-day outputs in ways that disconnect them from past wrongs — and to repair this rupture by exposing inequities, demanding accountability, and working toward redress.
+        </p>
+      </div>
+    </div>
+  </section>
+  
   <!-- Team Section -->
-  <section id="team" class="max-w-7xl mx-auto px-5 py-8 md:py-16">
+  <section id="team" class="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 mx-auto max-w-[92rem] 2xl:max-w-[110rem] 3xl:max-w-[128rem] 4xl:max-w-[144rem] py-8 md:py-16">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-4">
       <div class="lg:col-span-12">
         <h1 class="text-[#6e59f6] text-lg font-bold uppercase tracking-wide">TEAM</h1>
@@ -225,8 +269,64 @@ title: Lab for Urban Justice and Technology
     {% endfor %}
   </section>
 
+  <script>
+    (function() {
+      var header = document.getElementById('site-header');
+      var siteHeaderInner = document.getElementById("site-header-inner-fixed");
+      if (!header) return;
+      var isShrunk = false;
+      var threshold = 20;
+      function onScroll() {
+        var heroWrap = document.getElementById('hero-wrap');
+        var heroWrapBottom = heroWrap ? (heroWrap.offsetTop + heroWrap.offsetHeight) : 0;
+        var scrollY = window.scrollY || window.pageYOffset;
+
+        // shrink state for background toggle
+        if (scrollY > threshold) {
+          header.classList.add('is-shrunk');
+        } else {
+          header.classList.remove('is-shrunk');
+        }
+
+        // when below hero-wrap bottom, switch to fixed (sticky within hero might release at its boundary)
+        var containerClasses = ['w-full','px-5','sm:px-6','md:px-8','lg:px-10','xl:px-12','2xl:px-16','3xl:px-24','4xl:px-32','mx-auto','max-w-[92rem]','2xl:max-w-[110rem]','3xl:max-w-[128rem]','4xl:max-w-[144rem]'];
+        if (scrollY + 1 >= heroWrapBottom) {
+          header.classList.add('fixed');
+          header.classList.remove('sticky');
+          header.classList.remove('bg-transparent');
+          header.classList.add('bg-[#fafcf3]');
+          if (siteHeaderInner) { containerClasses.forEach(function(cls){ siteHeaderInner.classList.add(cls); }); }
+        } else {
+          header.classList.remove('fixed');
+          header.classList.add('sticky');
+          header.classList.remove('bg-[#fafcf3]');
+          header.classList.add('bg-transparent');
+          if (siteHeaderInner) { containerClasses.forEach(function(cls){ siteHeaderInner.classList.remove(cls); }); }
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var menuToggle = document.getElementById('menu-toggle');
+      var primaryNav = document.getElementById('primary-nav');
+      if (menuToggle && primaryNav) {
+        menuToggle.addEventListener('click', function() {
+          var isHidden = primaryNav.classList.contains('hidden');
+          if (isHidden) {
+            primaryNav.classList.remove('hidden');
+            menuToggle.setAttribute('aria-expanded', 'true');
+          } else {
+            primaryNav.classList.add('hidden');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+    })();
+  </script>
+
   <!-- Interested in Joining Section -->
-  <section class="max-w-7xl mx-auto px-5 py-8 md:py-16">
+  <section class="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 mx-auto max-w-[92rem] 2xl:max-w-[110rem] 3xl:max-w-[128rem] 4xl:max-w-[144rem] py-8 md:py-16">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
       <div class="lg:col-span-3 mb-4 lg:mb-0">
         <h2 class="text-[#6e59f6] text-xl md:text-2xl font-bold">Interested in joining?</h2>

@@ -5,7 +5,7 @@ wyso:
   last_name: So
   url: https://wonyoung.so
   title: Assistant Professor
-  affiliation: Taubman College, University of Michigan
+  affiliation: University of Michigan
   photo: wyso.jpg
   description: |
     <a href="https://wonyoung.so">Wonyoung So</a> is an Assistant Professor of Urban Technology at Taubman College of Architecture & Urban Planning, University of Michigan – Ann Arbor.
@@ -82,4 +82,16 @@ fduarte:
   type: collaborator
   first_name: Fabio
   last_name: Duarte
+  affiliation: MIT
+
+asya:
+  type: collaborator
+  first_name: Asya
+  last_name: Aizman
+  affiliation: MIT
+
+navalkha:
+  type: collaborator
+  first_name: Chenab
+  last_name: Navalkha
   affiliation: MIT

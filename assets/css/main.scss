@@ -27,6 +27,53 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Sticky header shrink behavior */
+#site-header {
+  background-color: transparent; /* transparent at top of page */
+  transition: padding 200ms ease, background-color 200ms ease;
+}
+
+#site-header img {
+  height: 150px; /* large logo at top */
+  width: auto;
+  transition: height 250ms ease;
+}
+
+#site-header.is-shrunk {
+  padding-top: 0.5rem; /* ~py-2 equivalent */
+  padding-bottom: 0.5rem;
+  background-color: #fafcf3; /* apply background after scroll */
+}
+
+#site-header.is-shrunk img {
+  height: 36px; /* smaller logo when scrolled */
+}
+
+/* Mobile: default to a smaller logo size */
+@media (max-width: 768px) {
+  #site-header img {
+    height: 40px;
+  }
+}
+
+/* Active state for research theme and tag filter buttons */
+.research-theme-btn.selected,
+.tag-btn.selected {
+  @apply border-[#6e59f6] bg-[#6e59f6] text-white;
+}
+
+/* Inactive state (default) */
+.research-theme-btn,
+.tag-btn {
+  @apply border-[#BBBBBB] bg-[#fafcf3] text-[#193349];
+}
+
+/* Hover effect when not selected */
+.research-theme-btn:not(.selected):hover,
+.tag-btn:not(.selected):hover {
+  @apply border-[#6e59f6] bg-white text-[#193349] transition-colors;
+}
+
 /* People layout styles */
 #people {
   margin: 2rem 0;
