@@ -54,18 +54,6 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      - name: PostCSS (process generated CSS)
-        # If Jekyll compiled SCSS into _site/assets/css/main.css, process it with postcss-cli
-        env:
-          # Force lightningcss to use the WASM fallback instead of native binary
-          LIGHTNING_CSS_USE_WASM: '1'
-        run: |
-          if [ -f _site/assets/css/main.css ]; then
-            # Explicitly use the repository postcss.config.js so plugins/plugins' paths resolve correctly
-            npx postcss _site/assets/css/main.css -o _site/assets/css/main.css --config ./postcss.config.js
-          else
-            echo "_site/assets/css/main.css not found; skipping PostCSS step"
-          fi
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
