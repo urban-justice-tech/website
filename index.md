@@ -269,6 +269,83 @@ title: Lab for Urban Justice and Technology
     {% endfor %}
   </section>
 
+  <!-- SVG duotone filter + CSS for work thumbnails -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- Duotone mapping: shadows -> #7655ea (purple), highlights -> #fafcf3 (off-white) -->
+      <filter id="duotone-7655ea-fafcf3" color-interpolation-filters="sRGB">
+        <!-- Convert to grayscale (luminance) -->
+        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0  0.2126 0.7152 0.0722 0 0  0.2126 0.7152 0.0722 0 0  0 0 0 1 0" result="gray" />
+        <!-- Map grayscale to duotone colors by channel tables (black->#7655ea, white->#fafcf3) -->
+        <feComponentTransfer color-interpolation-filters="sRGB">
+          <!-- R channel: 0 -> 118/255 (0.462745), 1 -> 250/255 (0.980392) -->
+          <feFuncR type="table" tableValues="0.462745 0.980392" />
+          <!-- G channel: 0 -> 85/255 (0.333333), 1 -> 252/255 (0.988235) -->
+          <feFuncG type="table" tableValues="0.333333 0.988235" />
+          <!-- B channel: 0 -> 234/255 (0.917647), 1 -> 243/255 (0.952941) -->
+          <feFuncB type="table" tableValues="0.917647 0.952941" />
+        </feComponentTransfer>
+      </filter>
+    </defs>
+  </svg>
+
+  <style>
+    /* Apply duotone filter only to main work thumbnails */
+    .work img.w-full {
+      filter: url(#duotone-7655ea-fafcf3);
+      -webkit-filter: url(#duotone-7655ea-fafcf3);
+      /* Smoothly transition filter removal, radius changes, and transforms */
+      transition: filter 220ms ease, -webkit-filter 220ms ease, border-radius 420ms ease, transform 220ms ease;
+      /* Hint to browser about upcoming transforms for better performance */
+      will-change: transform, filter;
+      /* Keep image rendering crisp while allowing border-radius animation */
+      backface-visibility: hidden;
+    }
+
+    /* Disable duotone when the image or the work card is hovered/focused */
+    .work:hover img.w-full,
+    .work:focus-within img.w-full,
+    .work img.w-full:hover,
+    .work img.w-full:focus,
+    .work img.w-full:focus-visible {
+      filter: none;
+      -webkit-filter: none;
+    }
+
+    /* Add a subtle zoom when the work card or the image is hovered/focused */
+    .work:hover img.w-full,
+    .work:focus-within img.w-full,
+    .work img.w-full:hover,
+    .work img.w-full:focus,
+    .work img.w-full:focus-visible {
+      transform: scale(1.04);
+      /* Elevate slightly visually — optional shadow */
+      box-shadow: 0 6px 18px rgba(19, 51, 73, 0.08);
+    }
+
+    /* --------------------------- */
+    /* Team / person photos (no zoom on hover) */
+    /* Target the team section images rendered as `w-full rounded-full` */
+    #team img.w-full {
+      filter: url(#duotone-7655ea-fafcf3);
+      -webkit-filter: url(#duotone-7655ea-fafcf3);
+      transition: filter 220ms ease;
+      will-change: filter;
+      backface-visibility: hidden;
+    }
+
+    /* On hover/focus for team avatars (image only), remove the duotone but do not scale */
+    #team img.w-full:hover,
+    #team img.w-full:focus,
+    #team img.w-full:focus-visible {
+      filter: none;
+      -webkit-filter: none;
+      /* explicitly prevent transform/zoom for these avatars */
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  </style>
+
   <script>
     (function() {
       var header = document.getElementById('site-header');
@@ -332,7 +409,8 @@ title: Lab for Urban Justice and Technology
         <h2 class="text-[#6e59f6] text-xl md:text-2xl font-bold">Interested in joining?</h2>
       </div>
       <div class="lg:col-span-6">
-        <p class="text-gray-600">We're always looking for passionate researchers and collaborators who share our vision for urban justice and technology. Get in touch to learn more about opportunities.</p>
+        <p class="text-gray-600">We're always looking for passionate researchers and collaborators who share our vision for urban justice and technology. <a href="mailto:wyso@umich.edu" class="underline">Get in touch</a> to learn more about opportunities.</p>
       </div>
     </div>
   </section>
+
