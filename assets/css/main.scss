@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: 'GT Standard';
-  src: url('GT-Standard-M-Standard-Medium.woff2') format('woff2');
+  src: url("{{ '/assets/css/GT-Standard-M-Standard-Medium.woff2' | relative_url }}") format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: 'GT Standard';
-  src: url('GT-Standard-L-Standard-Semibold.woff2') format('woff2');
+  src: url("{{ '/assets/css/GT-Standard-L-Standard-Semibold.woff2' | relative_url }}") format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;

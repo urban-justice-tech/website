@@ -10,7 +10,7 @@ title: Lab for Urban Justice and Technology
 
     <!-- Video Background -->
      <video id="hero-video" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-      <source src="/assets/imgs/hero.mp4" type="video/mp4">
+      <source src="{{ '/assets/imgs/hero.mp4' | relative_url }}" type="video/mp4">
     </video>
      
      <!-- Header over video -->
@@ -21,9 +21,9 @@ title: Lab for Urban Justice and Technology
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 pb-3 md:pb-0 lg:pb-0">
               <div class="lg:col-span-6 flex items-center justify-between">
-                <a href="/">
+                <a href="{{ '/' | relative_url }}">
                   <h1 class="text-[#193349] text-xl md:text-2xl font-bold">
-                    <img src="/assets/imgs/logo.svg" alt="Lab for Urban Justice and Technology">
+                    <img src="{{ '/assets/imgs/logo.svg' | relative_url }}" alt="Lab for Urban Justice and Technology">
                   </h1>
                 </a>
                 <button id="menu-toggle" class="lg:hidden ml-4 p-2 rounded" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
@@ -147,7 +147,8 @@ title: Lab for Urban Justice and Technology
           {% if work.images and work.images.size > 0 %}
             <div class="mb-4">
               <a href="{{ url }}" class="block">
-                <img src="/imgs/works/{{ work.slug }}/{{ work.images.first }}" alt="{{ work.title }}" class="w-full object-cover rounded">
+                {% capture work_thumb %}/imgs/works/{{ work.slug }}/{{ work.images.first }}{% endcapture %}
+                <img src="{{ work_thumb | relative_url }}" alt="{{ work.title }}" class="w-full object-cover rounded">
               </a>
             </div>
           {% endif %}
@@ -199,7 +200,7 @@ title: Lab for Urban Justice and Technology
                 {% assign person = site.data.people[author] %}
                 {% if person.photo %}
                   <div class="flex items-center">
-                    <img src="/imgs/people/{{ person.photo }}" alt="Profile of {{ person.first_name }}" class="w-6 h-6 rounded-full object-cover">
+                    <img src="{{ '/imgs/people/' | append: person.photo | relative_url }}" alt="Profile of {{ person.first_name }}" class="w-6 h-6 rounded-full object-cover">
                   </div>
                 {% endif %}
               {% endfor %}
@@ -238,7 +239,7 @@ title: Lab for Urban Justice and Technology
             <div class="w-full overflow-hidden">
 
               {% if person.photo %}
-               <img src="/imgs/people/{{person.photo}}" alt="Headshot of {{person.first_name}} {{person.last_name}}" class="w-full rounded-full ">
+               <img src="{{ '/imgs/people/' | append: person.photo | relative_url }}" alt="Headshot of {{person.first_name}} {{person.last_name}}" class="w-full rounded-full ">
               {% endif %}
             </div>
           </div>

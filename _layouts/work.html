@@ -130,7 +130,7 @@
               {% assign person_url = author.url | default: person.url %}
               <div class="flex items-center gap-3">
                 {% if person.photo %}
-                  <img src="/imgs/people/{{person.photo}}" 
+                  <img src="{{ '/imgs/people/' | append: person.photo | relative_url }}" 
                       alt="{{person.first_name}} {{person.last_name}}" 
                       class="w-12 h-12 rounded-full object-cover" />
                 {% endif %}
@@ -170,9 +170,10 @@
           <h3 class="text-[#193349] text-lg font-semibold mb-4">Images</h3>
           {% for image in page.images %}
             <div class="w-full rounded-lg overflow-hidden mb-4">
-              <img src="/imgs/works/{{page.slug}}/{{image}}" 
-                    alt="{{page.title}} - {{forloop.index}}" 
-                    class="w-full h-full object-cover" />
+      {% capture work_image_path %}/imgs/works/{{ page.slug }}/{{ image }}{% endcapture %}
+      <img src="{{ work_image_path | relative_url }}" 
+        alt="{{page.title}} - {{forloop.index}}" 
+        class="w-full h-full object-cover" />
             </div>
           {% endfor %}
         </div>
